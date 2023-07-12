@@ -1,0 +1,95 @@
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" id="cart-button" data-modal-target="cart-modal">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Welcome to the Japanese Cuisine Restaurant</h1>
+      <p>Enjoy our diverse menu featuring sushi, sashimi, ramen, and more.</p>
+    </section>
+
+    <section>
+      <h2>Menu</h2>
+      <ul id="menu">
+        <li class="product-card">
+          <img src="assets/sushi.jpg" alt="Sushi">
+          <h3>Sushi</h3>
+          <p>Juicy pieces of fish and seafood on rice, seasoned with soy sauce.</p>
+          <p class="price">Price: $10</p>
+          <button class="add-to-cart-btn" onclick="addToCart(event)">Добавить в корзину</button>
+          <button class="add-to-cart-btn" onclick="incrementQuantity(event)">+</button>
+          <span class="quantity">0</span>
+          <button class="remove-from-cart-btn" onclick="decrementQuantity(event)">-</button>
+        </li>
+        <li class="product-card">
+          <img src="assets/ramen.jpg" alt="Ramen">
+          <h3>Ramen</h3>
+          <p>Traditional Japanese noodle soup with various toppings.</p>
+          <p class="price">Price: $12</p>
+          <button class="add-to-cart-btn" onclick="addToCart(event)">Добавить в корзину</button>
+          <button class="add-to-cart-btn" onclick="incrementQuantity(event)">+</button>
+          <span class="quantity">0</span>
+          <button class="remove-from-cart-btn" onclick="decrementQuantity(event)">-</button>
+        </li>
+        <li class="product-card">
+          <img src="assets/sashimi.jpg" alt="Sashimi">
+          <h3>Sashimi</h3>
+          <p>Fresh slices of raw fish or seafood served without rice.</p>
+          <p class="price">Price: $15</p>
+          <button class="add-to-cart-btn" onclick="addToCart(event)">Добавить в корзину</button>
+          <button class="add-to-cart-btn" onclick="incrementQuantity(event)">+</button>
+          <span class="quantity">0</span>
+          <button class="remove-from-cart-btn" onclick="decrementQuantity(event)">-</button>
+        </li>
+        <li class="product-card">
+          <img src="assets/tempura.jpg" alt="Tempura">
+          <h3>Tempura</h3>
+          <p>Deep-fried seafood or vegetables coated in a light, crispy batter.</p>
+          <p class="price">Price: $8</p>
+          <button class="add-to-cart-btn" onclick="addToCart(event)">Добавить в корзину</button>
+          <button class="add-to-cart-btn" onclick="incrementQuantity(event)">+</button>
+          <span class="quantity">0</span>
+          <button class="remove-from-cart-btn" onclick="decrementQuantity(event)">-</button>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>About Us</h2>
+      <p>We are a Japanese cuisine restaurant with a long history. Our team of experienced chefs creates delicious and authentic Japanese dishes using only fresh ingredients.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Address: 123 Example Street, Kiev</p>
+      <p>Phone: 123-456-789</p>
+      <p>Email: info@restaurant.com</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Japanese Cuisine Restaurant</p>
+  </footer>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Корзина</h2>
+      <div id="cart-items" class="cart">
+        <div *ngIf="cartIsEmpty">
+          Корзина пуста.
+        </div>
+      </div>    
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
